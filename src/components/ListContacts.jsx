@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const ListContacts = ({ contacts, onDeleteContact }) => {
+const ListContacts = ({ contacts, onDeleteContact, onNavigate }) => {
     // console.log(contacts)
 
     const [query, setQuery] = useState("")
@@ -23,6 +23,9 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
             {console.log(query)}
             <div className='list-contacts-top'>
                 <input className='search-contacts' type='text' placeholder='Search Contacts' value={query} onChange={(event) => updateQuery(event.target.value)} />
+                <a href='#create' className="add-contact" onClick={onNavigate}>'
+                    Add Contact
+                </a>
             </div>
 
             {
