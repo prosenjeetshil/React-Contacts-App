@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-const ListContacts = ({ contacts, onDeleteContact, onNavigate }) => {
+const ListContacts = ({ contacts, onDeleteContact }) => {
     // console.log(contacts)
 
     const [query, setQuery] = useState("")
@@ -23,9 +24,7 @@ const ListContacts = ({ contacts, onDeleteContact, onNavigate }) => {
             {console.log(query)}
             <div className='list-contacts-top'>
                 <input className='search-contacts' type='text' placeholder='Search Contacts' value={query} onChange={(event) => updateQuery(event.target.value)} />
-                <a href='#create' className="add-contact" onClick={onNavigate}>'
-                    Add Contact
-                </a>
+                <Link to="/create" className='add-contact'>Add contact</Link>
             </div>
 
             {
